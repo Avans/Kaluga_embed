@@ -1,0 +1,29 @@
+
+<html>
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Script that converts the query string into valid parameter -->
+    <script type="text/javascript">
+    function searchPrimo() {
+    document.getElementById("primoQuery").value = "any,contains," + document.getElementById("primoQueryTemp").value.replace(/[,]/g, " ");
+    document.forms["searchForm"].submit();
+    }
+    </script>
+    </head>
+    <body>
+    <form id="simple" name="searchForm" method="get" target="_self" action="https://avans.primo.exlibrisgroup.com/discovery/search" enctype="application/x-www-form-urlencoded; charset=utf-8" onsubmit="searchPrimo()">
+    <!-- Customizable Parameters -->
+    <input type="hidden" name="vid" value="31AVANS_INST:31AVANS_VU1">
+    <input type="hidden" name="tab" value="Everything">
+    <input type="hidden" name="search_scope" value="MyInst_and_CI">
+    <input type="hidden" name="lang" value="en">
+    <!-- Fixed parameters -->
+    <input type="hidden" name="query" id="primoQuery">
+    <input type="text" id="primoQueryTemp" value="" placeholder="Search Kaluga..." size="35">
+    <!-- Search Button -->
+    <input id="go" title="Search" onclick="searchPrimo()" type="button" value="Search" alt="Search" style="height: 23px; font-size: 12px; font-weight: bold; background: #C6052A; color: #ffffff; border: 1px solid;">
+    </form>
+    </body>
+    </html>
+    
+    

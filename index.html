@@ -5,10 +5,63 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        input {
+            border:1px solid #2e2e2e;
+            padding:5px;
+        }
+
+        button {
+            margin-left:2px;
+            padding:4px;
+        }
+
+        iframe {
+            margin:5px;
+        }
+    </style>
 </head>
 <body>
-    
-    Hello world
+
+    <h2>Nederlands</h2>
+
+    <input id="nl" value="<iframe src='https://avans.github.io/Kaluga_embed/nederlands.html'></iframe>" />
+    <button onclick="copy('nl')">Copy to clipboard</button>
+
+    <br>
+
+    <iframe src="/nederlands.html"></iframe>
+
+    <hr>
+
+    <h2>Engels</h2>
+
+    <input id="nl" value="<iframe src='https://avans.github.io/Kaluga_embed/english.html'></iframe>" />
+    <button onclick="copy('nl')">Copy to clipboard</button>
+
+
+    <iframe src="/english.html"></iframe>
+
+    <script>
+
+function copy(id) {
+
+    /* Get the text field */
+    var copyText = document.getElementById(id);
+
+
+    /* Select the text field */
+    copyText.focus();
+    copyText.select();
+    copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+    /* Copy the text inside the text field */
+    document.execCommand("copy");
+
+}
+
+    </script>
+
     
 </body>
 </html>
