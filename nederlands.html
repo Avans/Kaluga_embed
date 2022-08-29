@@ -4,8 +4,7 @@
 <!-- Script that converts the query string into valid parameter -->
 <script type="text/javascript">
 function searchPrimo() {
-document.getElementById("primoQuery").value = "any,contains," + document.getElementById("primoQueryTemp").value.replace(/[,]/g, " ");
-document.forms["searchForm"].submit();
+    document.getElementById("primoQuery").value = "any,contains," + document.getElementById("primoQueryTemp").value.replace(/[,]/g, " ");
 }
 </script>
 </head>
@@ -15,12 +14,12 @@ document.forms["searchForm"].submit();
 <input type="hidden" name="vid" value="31AVANS_INST:31AVANS_VU1">
 <input type="hidden" name="tab" value="Everything">
 <input type="hidden" name="search_scope" value="MyInst_and_CI">
-<input type="hidden" name="lang" value="en">
+<input type="hidden" name="lang" value="NL">
 <!-- Fixed parameters -->
 <input type="hidden" name="query" id="primoQuery">
 <input type="text" id="primoQueryTemp" value="" placeholder="Zoek in Kaluga..." size="35">
 <!-- Search Button -->
-<input id="go" title="Zoek" onclick="searchPrimo()" type="button" value="Zoek" alt="Search" style="height: 23px; font-size: 12px; font-weight: bold; background: #C6052A; color: #ffffff; border: 1px solid;">
+<input id="go" title="Zoek" type="submit" value="Zoek" alt="Search" style="height: 23px; font-size: 12px; font-weight: bold; background: #C6052A; color: #ffffff; border: 1px solid;">
 </form>
 </body>
 </html>

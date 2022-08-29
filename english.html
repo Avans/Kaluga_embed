@@ -5,8 +5,7 @@
     <!-- Script that converts the query string into valid parameter -->
     <script type="text/javascript">
     function searchPrimo() {
-    document.getElementById("primoQuery").value = "any,contains," + document.getElementById("primoQueryTemp").value.replace(/[,]/g, " ");
-    document.forms["searchForm"].submit();
+        document.getElementById("primoQuery").value = "any,contains," + document.getElementById("primoQueryTemp").value.replace(/[,]/g, " ");
     }
     </script>
     </head>
@@ -21,7 +20,7 @@
     <input type="hidden" name="query" id="primoQuery">
     <input type="text" id="primoQueryTemp" value="" placeholder="Search Kaluga..." size="35">
     <!-- Search Button -->
-    <input id="go" title="Search" onclick="searchPrimo()" type="button" value="Search" alt="Search" style="height: 23px; font-size: 12px; font-weight: bold; background: #C6052A; color: #ffffff; border: 1px solid;">
+    <input id="go" title="Search" type="submit" value="Search" alt="Search" style="height: 23px; font-size: 12px; font-weight: bold; background: #C6052A; color: #ffffff; border: 1px solid;">
     </form>
     </body>
     </html>
