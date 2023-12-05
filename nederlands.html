@@ -1,9 +1,49 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style>
+    * {
+        box-sizing: border-box;
+    }
+    body {
+        background-color: #C6002A;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        height: 80vh;
+    }
+    input {
+        font-size:120%;
+        padding:15px;
+        border:0px;
+    }
+    input:focus {
+        outline: none;
+    }
+    form {
+        display: flex;
+        margin:15px;
+        align-items: stretch;
+    }
+    /** input type submit **/
+    input[type=submit] {
+        display:block;
+        background-color: white;
+        font-weight: bold;
+    }
+    input[type=submit]:hover {
+        background-color: black;
+        color: white;
+        cursor: pointer;
+    }
+
+</style>
 <!-- Script that converts the query string into valid parameter -->
 <script type="text/javascript">
 function searchPrimo() {
+
+    //check if the go_advanced button was pressed to submit this form
     document.getElementById("primoQuery").value = "any,contains," + document.getElementById("primoQueryTemp").value.replace(/[,]/g, " ");
 }
 </script>
@@ -19,7 +59,13 @@ function searchPrimo() {
 <input type="hidden" name="query" id="primoQuery">
 <input type="text" id="primoQueryTemp" value="" placeholder="Zoek in Kaluga..." size="35">
 <!-- Search Button -->
-<input id="go" title="Zoek" type="submit" value="Zoek" alt="Search" style="height: 23px; font-size: 12px; font-weight: bold; background: #C6052A; color: #ffffff; border: 1px solid;">
+<input id="go" onclick="mode='basic'" title="Zoek" type="submit" value="Zoek" alt="Search">
+
+<!-- maak een lijst van kat krabt dingen -->
+<ul>
+    
+</ul>
+
 </form>
 </body>
 </html>
