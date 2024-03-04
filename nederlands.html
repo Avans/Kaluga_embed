@@ -4,6 +4,8 @@
 <style>
     * {
         box-sizing: border-box;
+        padding: 0;
+        margin: 0;
     }
     body {
         background-color: #C6002A;
@@ -14,7 +16,7 @@
         height: 80vh;
     }
     input {
-        font-size:120%;
+        font-size: 1.2em;
         padding:15px;
         border:0px;
     }
@@ -23,19 +25,32 @@
     }
     form {
         display: flex;
-        margin:15px;
+        padding:15px;
         align-items: stretch;
+        width: 100%;
+        max-width: 600px;
+    }
+    input.realquery {
+        flex:1;
     }
     /** input type submit **/
     input[type=submit] {
         display:block;
         background-color: white;
         font-weight: bold;
+        flex: 0 0 auto;
     }
     input[type=submit]:hover {
         background-color: black;
         color: white;
         cursor: pointer;
+    }
+
+    /** Media query mobile **/
+    @media (max-width: 400px) {
+       * {
+           font-size: 90%;
+       }
     }
 
 </style>
@@ -57,14 +72,10 @@ function searchPrimo() {
 <input type="hidden" name="lang" value="NL">
 <!-- Fixed parameters -->
 <input type="hidden" name="query" id="primoQuery">
-<input type="text" id="primoQueryTemp" value="" placeholder="Zoek in Kaluga..." size="35">
+<input type="text" id="primoQueryTemp" value="" class="realquery" placeholder="Zoek in onze collectie..." size="0">
 <!-- Search Button -->
 <input id="go" onclick="mode='basic'" title="Zoek" type="submit" value="Zoek" alt="Search">
 
-<!-- maak een lijst van kat krabt dingen -->
-<ul>
-    
-</ul>
 
 </form>
 </body>

@@ -1,64 +1,83 @@
-
 <html>
-    <head>
+
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <!-- Script that converts the query string into valid parameter -->
     <script type="text/javascript">
-    function searchPrimo() {
-        document.getElementById("primoQuery").value = "any,contains," + document.getElementById("primoQueryTemp").value.replace(/[,]/g, " ");
-    }
+        function searchPrimo() {
+            document.getElementById("primoQuery").value = "any,contains," + document.getElementById("primoQueryTemp").value.replace(/[,]/g, " ");
+        }
     </script>
-    <style>
-        body {
-            background-color: #C6002A;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            justify-content: center;
-            height: 80vh;   
-        }
-        input {
-            font-size:120%;
-            padding:15px;
-            border:0px;
-        }
-        input:focus {
-            outline: none;
-        }
-        form {
-            display: flex;
-            margin:15px;
-            align-items: stretch;
-        }
-        /** input type submit **/
-        input[type=submit] {
-            display:block;
-            background-color: white;
-            font-weight: bold;
-        }
-        input[type=submit]:hover {
-            background-color: black;
-            color: white;
-            cursor: pointer;
-        }
+<style>
+    * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+    }
+    body {
+        background-color: #C6002A;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        height: 80vh;
+    }
+    input {
+        font-size: 1.2em;
+        padding:15px;
+        border:0px;
+    }
+    input:focus {
+        outline: none;
+    }
+    form {
+        display: flex;
+        padding:15px;
+        align-items: stretch;
+        width: 100%;
+        max-width: 600px;
+    }
+    input.realquery {
+        flex:1;
+    }
+    /** input type submit **/
+    input[type=submit] {
+        display:block;
+        background-color: white;
+        font-weight: bold;
+        flex: 0 0 auto;
+    }
+    input[type=submit]:hover {
+        background-color: black;
+        color: white;
+        cursor: pointer;
+    }
 
-        
-    </style>
-    </head>
-    <body>
-    <form id="simple" name="searchForm" method="get" target="_blank" action="https://avans.primo.exlibrisgroup.com/discovery/search" enctype="application/x-www-form-urlencoded; charset=utf-8" onsubmit="searchPrimo()">
-    <!-- Customizable Parameters -->
-    <input type="hidden" name="vid" value="31AVANS_INST:31AVANS_VU1">
-    <input type="hidden" name="tab" value="Everything">
-    <input type="hidden" name="search_scope" value="MyInst_and_CI">
-    <input type="hidden" name="lang" value="en">
-    <!-- Fixed parameters -->
-    <input type="hidden" name="query" id="primoQuery">
-    <input type="text" id="primoQueryTemp" value="" placeholder="Search Kaluga..." size="35">
-    <!-- Search Button -->
-    <input id="go" title="Search" type="submit" value="Search" alt="Search" >
+    /** Media query mobile **/
+    @media (max-width: 400px) {
+       * {
+           font-size: 90%;
+       }
+    }
+
+</style>
+</head>
+
+<body>
+    <form id="simple" name="searchForm" method="get" target="_blank"
+        action="https://avans.primo.exlibrisgroup.com/discovery/search"
+        enctype="application/x-www-form-urlencoded; charset=utf-8" onsubmit="searchPrimo()">
+        <!-- Customizable Parameters -->
+        <input type="hidden" name="vid" value="31AVANS_INST:31AVANS_VU1">
+        <input type="hidden" name="tab" value="Everything">
+        <input type="hidden" name="search_scope" value="MyInst_and_CI">
+        <input type="hidden" name="lang" value="en">
+        <!-- Fixed parameters -->
+        <input type="hidden" name="query" id="primoQuery">
+        <input type="text" id="primoQueryTemp" value="" class="realquery"  placeholder="Search in our collection..." >
+        <!-- Search Button -->
+        <input id="go" title="Search" type="submit" value="Search" alt="Search">
     </form>
-    </body>
-    </html>
-    
-    
+</body>
+
+</html>
